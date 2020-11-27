@@ -1,0 +1,51 @@
+<div class="container" style="max-width: 50%; margin-top: 50px;">
+    <div class="row justify-content-md-center">
+      <div class="col col-4">
+        <div class="card">
+          <div class="card-header bg-primary">
+              <h5 class="card-title" style="color: white;">{{titulo}} Producto</h5>
+          </div>
+          <div class="card-body"> 
+              <div class="form-group">
+                  <label for="a">Nombre del producto: </label>
+                  <input type="text" name="campo1" class="form-control" [(ngModel)]="productoModel.nomprod">
+                  <label for="a">Precio: </label>
+                  <input type="text" name="campo2" class="form-control" [(ngModel)]="productoModel.precio">
+                  <label for="a">Stock: </label>
+                  <input type="text" name="campo3" class="form-control" [(ngModel)]="productoModel.stock">
+                  <input type="hidden" name="idproducto" class="form-control" [(ngModel)]="productoModel.idproducto" >
+              </div>
+              <div class="form-group">
+                  <button class="btn btn-primary" (click)="create()">{{accion}}</button>
+              </div>           
+          </div>
+        </div>
+      </div>
+      <div class="col-8">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Nombre del producto</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Stock</th>
+              <th scope="coll" colspan="2">Acción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let producto of productos">
+              <td>{{producto.NOMPROD}}</td>
+              <td>S/. {{producto.PRECIO}}</td>
+              <td>{{producto.STOCK}}</td>
+              <td>
+                <a type="button" class="btn btn-warning" ><i class="fa fa-pencil" aria-hidden="true"></i></a>
+              </td>
+              <td>
+                <a type="button" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a>
+              </td>
+            </tr>          
+          </tbody>
+        </table>
+      </div>
+  </div>
+  </div>
+  
